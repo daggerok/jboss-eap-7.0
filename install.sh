@@ -34,13 +34,16 @@ fi
 if [ -z ${KEEP_HISTORY} ] || [[ ! ${KEEP_HISTORY} =~ ^(keep|yes|true)$ ]] ; then
   echo 'Cleanup history...'
   jboss-cli.sh --commands='connect','/core-service=patching:ageout-history'
-
-  for FOLDER in "tmp" "data" "log" ; do
-    sudo rm -rf ${JBOSS_HOME}/standalone/${FOLDER}
-  done
 fi
 
 echo 'Shutdown JBoss...'
 jboss-cli.sh --commands='connect','shutdown --restart=false'
+
+if [ -z ${KEEP_HISTORY} ] || [[ ! ${KEEP_HISTORY} =~ ^(keep|yes|true)$ ]] ; then
+  echo 'Cleanup tmp, data, logs...'
+  for FOLDER in "tmp" "data" "log" ; do
+    sudo rm -rf ${JBOSS_HOME}/standalone/${FOLDER}
+  done
+fi
 
 echo 'Done.'
