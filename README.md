@@ -1,5 +1,5 @@
 # jboss-eap-7.0 [![Build Status](https://travis-ci.org/daggerok/jboss-eap-7.0.svg?branch=master)](https://travis-ci.org/daggerok/jboss-eap-7.0)
-Patched JBoss EAP 7.0 (including 7.0.9 patch) Docker automation build based on centos7 / alpine3.8 images
+Patched JBoss EAP 7.0 (including __7.0.9 patch__) Docker automation build based on centos7 / alpine3.8 images
 
 [daggerok/jboss-eap-7.0](https://hub.docker.com/r/daggerok/jboss-eap-7.0/)
 
