@@ -15,7 +15,7 @@ if [ "${JBOSS_EAP_PATCH}" != '7.0.0' ] ; then
     echo "Applying $(basename ${PATCH_FILENAME}) patch..."
     INSTRUCTIONS_FILE="${PATCH_FILENAME}.instructions"
 
-    if [[ ${PATCH_FILENAME} == *-7.0.14.CP.zip ]] ; then
+    if [[ ${PATCH_FILENAME} == *-7.0.5-patch.zip ]] ; then
       echo "connect
             patch apply ${PATCH_FILENAME} --override=bin/standalone.conf,bin/standalone.conf.bat
             shutdown --restart=true" > ${INSTRUCTIONS_FILE}
